@@ -1,0 +1,70 @@
+---
+import Icon from "astro-icon";
+---
+
+<section
+  class="container mx-auto mt-32 px-4 lg:px-28"
+  aria-label="Why Us"
+  id="why-us"
+>
+  <h2 class="uppercase text-xl">Why Us</h2>
+  <div class="w-full h-[1px] bg-dark mb-10 mt-5"></div>
+  <div
+    class="flex justify-around items-center mt-20 flex-col gap-8 2xl:gap-0 2xl:flex-row"
+  >
+    <h3
+      class="text-black uppercase flex flex-col items-center text-4xl xl:text-7xl 2xl:gap-0 2xl:w-1/2 2xl:items-end 2xl:text-8xl"
+    >
+      <span>the team of</span>
+      <span>professionals</span>
+    </h3>
+    <p class="max-w-md text-lg text-center 2xl:text-left 2xl:w-1/2">
+      At our digital design studio, we understand that you want a hassle-free
+      experience when it comes to bringing your ideas to life. That's why we
+      prioritize simplicity in everything we do. Our goal is to create a
+      seamless process that results in a product that perfectly aligns with your
+      vision.
+    </p>
+  </div>
+
+  <div class="flex mt-16 justify-center 2xl:justify-end">
+    <div class="flex flex-col 2xl:w-1/2">
+      <!-- First feature -->
+      <div class="flex gap-12">
+        <Icon name="light" class="w-7 h-11" />
+        <div class="flex flex-col">
+          <h3 class="text-[32px] uppercase font-bold">Simplicity</h3>
+          <p class="max-w-sm">
+            No headaches, we prioritize a hassle-free experience, delivering the
+            product as you describe.
+          </p>
+        </div>
+      </div>
+      <div class="w-full h-[1px] opacity-10 bg-dark mb-10 mt-5"></div>
+      <!-- Second feature -->
+      <div class="flex gap-12">
+        <Icon name="light" class="w-7 h-11" />
+        <div class="flex flex-col">
+          <h3 class="text-[32px] uppercase font-bold">Innovation</h3>
+          <p class="max-w-sm">
+            We incorporate cutting-edge tools like AI to provide the best,
+            fastest, and most efficient results for our clients.
+          </p>
+        </div>
+      </div>
+      <div class="w-full h-[1px] opacity-10 bg-dark mb-10 mt-5"></div>
+      <!-- Third feature -->
+      <div class="flex gap-12">
+        <Icon name="social" class="w-10 h-12" />
+        <div class="flex flex-col">
+          <h3 class="text-[32px] uppercase font-bold">Compromise</h3>
+          <p class="max-w-sm">
+            We stand behind our work and offer a unique compromise - if we don't
+            deliver the agreed result, you don't pay.
+          </p>
+        </div>
+      </div>
+      <div class="w-full h-[1px] opacity-10 bg-dark mb-10 mt-5"></div>
+    </div>
+  </div>
+</section>

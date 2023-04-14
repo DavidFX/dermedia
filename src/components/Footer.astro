@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon";
+const year = new Date().getFullYear();
+---
+
+<footer class="container mx-auto mt-32 px-4 lg:px-28">
+  <div class="w-full h-[1px] bg-dark mb-10 mt-40"></div>
+  <div
+    class="text-sm font-light flex justify-center gap-4 sm:justify-end sm:gap-8"
+  >
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#why-us">Why Us</a>
+    <a class="nav-link" href="#about">About Us</a>
+  </div>
+
+  <div
+    class="grid gap-4 my-16 grid-cols-1 grid-rows-6 sm:grid-cols-3 sm:grid-rows-2"
+  >
+    <h3 class="text-3xl">Our offices</h3>
+    <h3 class="text-3xl">Contacts</h3>
+    <h3 class="text-3xl sm:text-right">Social Media</h3>
+    <ul class="text-sm font-light row-start-2 sm:row-start-2">
+      <li>Our offices</li>
+      <li>Our offices</li>
+      <li>Our offices</li>
+    </ul>
+    <ul class="text-sm font-light row-start-4 sm:row-start-2">
+      <li>Contact</li>
+      <li>Contact</li>
+      <li>Contact</li>
+    </ul>
+    <div class="flex gap-8 sm:justify-self-end">
+      <!-- TODO: Add the link to Instagram -->
+      <a href="https://www.instagram.com/">
+        <Icon name="ph:instagram-logo" class="w-6 h-6" />
+      </a>
+    </div>
+  </div>
+
+  <div class="flex justify-center my-4">
+    Dermedia {year}. All rights reserved
+  </div>
+</footer>
+
+<style lang="scss">
+  .nav-link {
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #2e2e2e;
+      transition: width 0.3s;
+    }
+    &:hover::after {
+      width: 100%;
+      transition: width 0.3s;
+    }
+  }
+</style>

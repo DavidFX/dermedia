@@ -1,0 +1,139 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<section
+  class="container mx-auto mt-32 px-4 lg:px-28"
+  aria-label="Services"
+  id="services"
+>
+  <h2 class="uppercase text-xl">services</h2>
+  <div class="w-full h-[1px] bg-dark mb-10 mt-5"></div>
+  <div
+    class="flex w-full h-full flex-col items-center overflow-hidden xl:flex-row"
+  >
+    <!-- Imagine -->
+    <img
+      class="h-92 win-w-full w-auto h-auto xl:w-[550px] xl:h-[413px] xl:min-w-1/2"
+      src="assets/img/MacBook.png"
+      alt="Dermadia"
+    />
+    <!-- Acordion container -->
+    <div class="flex flex-col gap-8 w-full items-start xl:w-1/2">
+      <!-- Acordion -->
+      <div class="flex gap-5 xs:gap-10">
+        <Icon name="Soft" class="w-9 h-9 inline-block" />
+        <div>
+          <button class="accordion text-3xl uppercase font-bold">
+            Websites
+            <Icon name="arrow-dark" class="h-3 w-6 inline-block transform" />
+          </button>
+          <div class="accordion-content">
+            <ul class="font-light text-lg">
+              <li>Real Estate Agencies</li>
+              <li>Small Businesses: Restaurants</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-[1px] bg-dark opacity-10 mb-10 mt-8"></div>
+
+      <!-- Acordion -->
+      <div class="flex gap-5 xs:gap-10">
+        <Icon name="Soft" class="w-9 h-9 inline-block transform" />
+        <div>
+          <button class="accordion text-3xl uppercase font-bold">
+            Video
+            <Icon name="arrow-dark" class="h-3 w-6 inline-block" />
+          </button>
+          <div class="accordion-content">
+            <ul class="font-light text-lg">
+              <li>Advertisement</li>
+              <li>Short films</li>
+              <li>Soundtracks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-[1px] bg-dark opacity-10 mb-10 mt-8"></div>
+
+      <!-- Acordion -->
+      <div class="flex gap-5 xs:gap-10">
+        <Icon name="Soft" class="w-9 h-9 inline-block transform -scale-y-100" />
+        <div>
+          <button class="accordion text-3xl uppercase font-bold">
+            mobile apps
+            <Icon name="arrow-dark" class="h-3 w-6 inline-block" />
+          </button>
+          <div class="accordion-content">
+            <ul class="font-light text-lg">
+              <li>Buisnes management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-[1px] bg-dark opacity-10 mb-10 mt-8"></div>
+      <!-- TODO: Add a the link to this button -->
+      <a
+        class="px-16 py-3 w-fit bg-black text-white text-lg font-bold place-self-center sm:place-self-start"
+        href="/">Create A Project</a
+      >
+    </div>
+  </div>
+  <!-- What we offer -->
+  <div class="flex justify-around items-center mt-20 flex-col xl:flex-row">
+    <h3
+      class="text-black uppercase w-full text-center text-6xl xs:text-7xl sm:text-8xl xl:text-right xl:w-1/2"
+    >
+      What <br />
+      we offer
+    </h3>
+    <p class="max-w-md text-lg text-center xl:text-left xl:w-1/2">
+      At our studio, we're dedicated to staying on top of the latest trends and
+      technologies. We believe in continuous learning and improvement, and we're
+      always exploring new ways to push the boundaries of digital design. With
+      our focus on simplicity, innovation, and compromise, we're confident that
+      we can deliver the best possible results for our clients.
+    </p>
+  </div>
+</section>
+
+<script>
+  const acordionButtons = document.querySelectorAll(".accordion");
+
+  acordionButtons.forEach((accordion) => {
+    accordion.addEventListener("click", () => {
+      accordion.classList.toggle("is-open");
+
+      let content = accordion.nextElementSibling;
+      let icon = accordion.getElementsByTagName("svg");
+      console.log(icon[0].class);
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon[0].classList.remove("-scale-y-100");
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon[0].classList.add("-scale-y-100");
+      }
+    });
+  });
+</script>
+
+<style lang="scss">
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+
+  .is-open {
+    display: block;
+  }
+</style>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

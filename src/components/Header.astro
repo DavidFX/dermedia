@@ -1,0 +1,81 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<header
+  class="flex absolute z-50 left-0 right-0 container mx-auto items-center justify-between text-light py-6 px-2 lg:px-28"
+>
+  <!-- Logo, homepage link -->
+  <a class="text-2xl font-bold" href="/">Dermedia</a>
+  <!-- Navigation -->
+  <nav class="hidden md:block">
+    <ul class="flex items-center gap-8 text-sm font-light">
+      <li><a class="nav-link" href="/">Home</a></li>
+      <li><a class="nav-link" href="#services">Services</a></li>
+      <li><a class="nav-link" href="#why-us">Why Us</a></li>
+      <li><a class="nav-link" href="#about">About Us</a></li>
+    </ul>
+  </nav>
+  <!-- Contact and language -->
+  <div class="hidden md:flex">
+    <a
+      class="px-8 py-3 text-lg font-bold border border-light transition-colors duration-300 ease-in-out hover:text-black hover:bg-light"
+      href="#contact">Contact Us</a
+    >
+  </div>
+  <!-- Hamburger menu -->
+  <button id="burger-menu">
+    <Icon onclick="toggleMenu()" class="w-8 h-8 md:hidden" name="fe:bar" />
+  </button>
+</header>
+
+<!-- Mobile menu -->
+<nav
+  id="mobile-menu"
+  class="fixed top-0 left-0 w-screen h-screen bg-dark z-50 overflow-hidden hidden"
+>
+  <div
+    class="flex absolute container mx-auto items-center justify-end text-light py-6 px-2 lg:px-28"
+  >
+    <Icon
+      onclick="toggleMenu()"
+      id="menu-close"
+      name="fe:close"
+      class="text-light w-8 h-8"
+    />
+  </div>
+
+  <ul
+    class="text-light flex w-full h-full flex-col items-center justify-center text-4xl gap-4"
+  >
+    <li><a onclick="toggleMenu()" href="/">Home</a></li>
+    <li><a onclick="toggleMenu()" href="#services">Services</a></li>
+    <li><a onclick="toggleMenu()" href="#why-us">Why Us</a></li>
+    <li><a onclick="toggleMenu()" href="#about">About Us</a></li>
+  </ul>
+</nav>
+
+<script is:inline>
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle("hidden");
+  }
+</script>
+
+<style lang="scss">
+  .nav-link {
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #f2f2f2;
+      transition: width 0.3s;
+    }
+    &:hover::after {
+      width: 100%;
+      transition: width 0.3s;
+    }
+  }
+</style>

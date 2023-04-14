@@ -1,0 +1,39 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="A small media agency composed of a team of passionate creatives and filmakers that want to help small buisnesses and artists get their message out there."
+    />
+    <meta
+      name="keywords"
+      content="media, agency, digital agency, Costa del Sol, website, malaga, mobile app, video, website for my buisness marbella buisness, film, video, creative, passion, team, help"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Space+Grotesk:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="text-dark bg-light font-space">
+    <slot />
+  </body>
+</html>
